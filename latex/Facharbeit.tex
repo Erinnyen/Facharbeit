@@ -1,0 +1,93 @@
+\documentclass[12pt, a4paper]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amsfonts, amsthm}
+\usepackage[ngerman]{babel}
+\usepackage{xcolor}
+\usepackage{geometry}
+\geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=30mm,
+ right=30mm,
+ top=20mm,
+ bottom=40mm
+ }
+
+\usepackage[framemethod=tikz]{mdframed}
+
+% Proposition zur korrekten Nummerierung
+\newmdtheoremenv[
+]{prop}{Proposition}[section]
+
+% Spezieller Style für die Definitionen
+\theoremstyle{definition}
+\newmdtheoremenv[
+  hidealllines=true,
+  leftline=true,
+  innerleftmargin=10pt,
+  innerrightmargin=10pt,
+  innertopmargin=0pt,
+]{defi}[prop]{Definition}
+
+% Bemerkungen Theorem
+\newmdtheoremenv[
+  hidealllines=true,
+  innertopmargin=0pt,
+]{rem}[prop]{Bemerkung}
+
+% Korollar Theorem
+\newmdtheoremenv[
+  hidealllines=true,
+  innertopmargin=0pt,
+]{kor}[prop]{Korollar}
+
+% Lemma Theorem
+\newmdtheoremenv[
+  hidealllines=true,
+  innertopmargin=0pt,
+]{lem}[prop]{Lemma}
+
+\makeatletter
+
+\newcommand*{\rom}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\newcommand\omicron{o}
+
+
+\makeatother
+\title{\LARGE   Facharbeit im Leistungskurs Mathematik  \vspace*{0.5cm} \\
+  \Huge Renditenverteilung am Kapitalmarkt}
+\LARGE \author{Jesse Georgias}
+\LARGE \date{März 2021}
+
+\begin{document}
+
+\maketitle
+\newpage
+\vspace*{\fill}
+\begin{normalsize}
+\noindent
+  \textbf{Satz:}
+  \LaTeX
+\end{normalsize}
+\vspace*{5pt}
+\hrule
+\vspace{5pt}
+\noindent
+\textbf{Quellen:}
+\\
+Christian Limbacher, \textit{Schiefe und Kurtosis von Aktienrenditen}, Masterarbeit, Johannes Kepler Universität Linz, 2018 \\
+Benoit Mandelbrot, \textit{The Variation of certain speculative Prices}, The University of Chigago Press, 1963 \\
+Hanspeter Schmidli, \textit{Einführung in die Stochastik}, Vorlesungsnotizen, Universität zu Köln, 2019
+\tableofcontents
+\newpage
+\chapter{Einleitung}
+\section{Einleitung}
+
+
+
+
+
+
+
+
+\end{document}

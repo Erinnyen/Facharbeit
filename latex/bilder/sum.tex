@@ -1,0 +1,169 @@
+\documentclass[12pt, a4paper]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amsfonts, amsthm}
+\usepackage[ngerman]{babel}
+\usepackage{xcolor}
+\usepackage{geometry}
+\geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=30mm,
+ right=30mm,
+ top=20mm,
+ bottom=40mm
+ }
+ 
+\usepackage[framemethod=tikz]{mdframed}
+ 
+% Proposition zur korrekten Nummerierung
+\newmdtheoremenv[
+]{prop}{Proposition}[section]
+
+% Spezieller Style für die Definitionen
+\theoremstyle{definition}
+\newmdtheoremenv[
+  hidealllines=true,
+  leftline=true,
+  innerleftmargin=10pt,
+  innerrightmargin=10pt,
+  innertopmargin=0pt,
+]{defi}[prop]{Definition}
+
+% Bemerkungen Theorem
+\newmdtheoremenv[
+  hidealllines=true,
+  innertopmargin=0pt,
+]{rem}[prop]{Bemerkung}
+
+% Korollar Theorem
+\newmdtheoremenv[
+  hidealllines=true,
+  innertopmargin=0pt,
+]{kor}[prop]{Korollar}
+
+% Lemma Theorem
+\newmdtheoremenv[
+  hidealllines=true,
+  innertopmargin=0pt,
+]{lem}[prop]{Lemma}
+
+\makeatletter
+
+\newcommand*{\rom}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\newcommand\omicron{o}
+
+
+\makeatother
+\title{\LARGE   Zusammefassung der Vorlesung  \vspace*{0.5cm} \\
+  \Huge Lineare Algebra I}
+\LARGE \author{Jesse Georgias}
+\LARGE \date{Dezember 2021}
+
+\begin{document}
+
+\maketitle
+\newpage
+\vspace*{\fill}
+\begin{normalsize}
+\noindent
+  \textbf{Satz:}
+  \LaTeX
+\end{normalsize}
+\vspace*{5pt}
+\hrule
+\vspace{5pt}
+\noindent
+\textbf{Quellen:}
+\\
+Gerd Fischer, \textit{Lineare Algebra I}, Grundkurs Mathematik, Springer Spektrum, 2020
+Sander Zwegers, \textit{Lineare Algebra I}, Vorlesungsnotizen, Universität zu Köln, 2021
+\tableofcontents
+\newpage
+\chapter{Lineare Gleichungssysteme}
+\section{Lineare Gleichungssysteme}
+
+
+\chapter{Matrizenoperationen}
+
+\chapter{Determinante}
+
+\chapter{Vektorräume}
+
+\chapter{Lineare Abbildungen}
+\section{Lineare Abbildungen}
+
+\begin{defi}
+  $\varphi:V\longrightarrow W$ ist eine Lineare Abbildung (\textit{Homomorphismus}) wenn:\vspace*{0.3cm} \\
+    \indent (a) $ \varphi(v + w) = \varphi(v) + \varphi(w) $ \indent $\forall v, w \in V$ \vspace*{0.2cm} \\
+    \indent (b) $ \varphi(\lambda v) = \lambda \varphi(v) $ \indent $ \forall \lambda \in \mathbb{K}, \ 
+    \forall v \in V$
+\end{defi} 
+
+\begin{kor}
+  $\lambda = 0 \Rightarrow \varphi(0v) = 0\varphi(v) \Rightarrow \varphi(0) = 0$
+\end{kor}
+
+\begin{defi}
+  $Hom_{\mathbb{K}}(V, W)$ ist die Menge aller \textit{Homomorphismen} von $V$ nach $W$. Somit
+  $\varphi \in Hom_{\mathbb{K}}(V, W)$. Weiterhin heißt $\varphi$: \vspace*{0.2cm} \\
+    \indent (a) \textit{Monomorphismus}, wenn $\varphi$ injektiv ist; \vspace*{0.1cm} \\
+    \indent (a) \textit{Endomorphismus}, wenn $\varphi$ surjektiv ist; \vspace*{0.1cm} \\
+    \indent (a) \textit{Isomorphismus}, wenn $\varphi$ bijektiv ist.
+\end{defi}
+
+\begin{rem}
+  Eigenschaften von Abbildungen: \vspace*{0.3cm}\\
+    \indent (a) \textit{Injektivität}: Jedes Urbild hat höchstens ein Abbild \vspace*{0.2cm} \\
+    \indent (b) \textit{Surjektivität}: Jedes Abbild hat ein nicht-leeres Urbild \vspace*{0.2cm} \\
+    \indent (c) \textit{Bijektivität}: Injektivität und Surjektivität sind gegeben.
+\end{rem}
+
+\begin{defi}
+  \textit{Bild} und \textit{Kern}: \vspace*{0.2cm} \\
+    \indent $Im(\varphi) := \varphi(V) = \{ \varphi(v) \ | \ v \in V\} \subset W$ \vspace*{0.2cm}\\
+    \indent$Ker(\varphi) := \{v \in V \ | \ \varphi(v) = 0\} \subset V$ 
+\end{defi}
+
+\begin{lem}
+  Wenn $\varphi$ \textit{injektiv} ist, so gilt $Ker(\varphi)=\{0 \}$ (Da andernfalls mehrere Urbilder    das    selbe Abbild hätten). \\
+Angenommen $Ker(\varphi)=\{0 \} \text{ und } \varphi(v) = \varphi(\tilde{v})$, so folgt: \\
+  \indent $\Rightarrow \varphi(v - \tilde{v}) = \varphi(v) - \varphi(\tilde{v}) = 0 \text{ und } v - \tilde{v} \in Ker(\varphi)$ \\
+  \indent $\Rightarrow v - \tilde{v} = 0 \Rightarrow v = \tilde{v} \Rightarrow \varphi \text{ ist \textit{injektiv}.}$ \\
+  \indent $\Rightarrow \text{ Wenn } Ker(\varphi) = \{0\} \text{, so ist } \varphi \text{ \textit{injektiv}.}$
+\end{lem}
+
+\begin{defi}
+  Sobald es einen \textit{Isomorphismus} zwischen $V$ und $W$ gibt,
+  so heißen diese zueinander Isomorph. (Notation $V \simeq W$) 
+\end{defi}
+
+
+\begin{lem}
+  Sei $V \simeq W$:
+  \begin{itemize}
+    \item[(a)] Wenn $\varphi(v_{1}), \ldots, \varphi(v_{n}) \in V$ lin. Un., so $v_{1}, \ldots, v_{n} \in W$ ebenfalls lin. Un.
+    \item[(b)] $\{ v_{1}, \ldots, v_{n} \} \subset V $ dann Erz. Sys. von $V$, wenn $\{ \varphi(v_{1}), \ldots, \varphi(v_{n}) \} \subset W$ \indent ebenfalls Erz. Sys. von $W$.
+    \item[(c)] $v_{1}, \ldots, v_{n} \in V $ dann eine Basis von $V$, wenn $\varphi(v_{1}), \ldots, \varphi(v_{n}) \in W$ eine Basis von $W$ sind.
+  \end{itemize}
+\end{lem}
+
+
+\section{Rangsatz}
+
+\begin{defi}
+  Sei $\varphi \in \text{Hom}_{\mathbb{K}}(V,W)$ \vspace*{0.2cm} \\
+    \centerline{ $\text{rg}(\varphi) := \text{dim}_{\mathbb{K}}(\text{Im}(\varphi))$ }
+\end{defi}
+
+\begin{rem}
+  Sei $\{ v_{1}, \ldots, v_{n} \}$ eine Basis des $\mathbb{K}$-Vektorraumes $V$, \\ so ist $\text{dim}_{\mathbb{K}}(V) := |\{ v_{1}, \ldots, v_{n} \}| = n \in \mathbb{N}_{0}$
+\end{rem}    
+
+
+  
+  
+
+
+
+
+\end{document}
