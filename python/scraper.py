@@ -10,8 +10,9 @@ style.use('ggplot')
 start = dt.datetime(1980, 1, 1)
 end = dt.datetime.now()
 
-os.environ['ALPHAVANTAGE_API_KEY'] = 'RLO3464TEX2XJYM8'
-
+API_KEY = 'api/api_key.txt'
+with open(API_KEY) as f:
+    os.environ['ALPHAVANTAGE_API_KEY'] = f.readlines()[0]
 
 df = web.DataReader("AAPL", "av-monthly", start, end,
                     api_key=os.getenv('ALPHAVANTAGE_API_KEY'))
