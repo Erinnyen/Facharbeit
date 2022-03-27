@@ -1,0 +1,2 @@
+import os
+os.environ['ALPHAVANTAGE_API_KEY'] = 'RLO3464TEX2XJYM8'

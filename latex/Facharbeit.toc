@@ -1,3 +1,5 @@
 \babel@toc {ngerman}{}\relax 
 \contentsline {chapter}{\numberline {1}Einleitung}{3}{}%
-\contentsline {section}{\numberline {1.1}Einleitung}{3}{}%
+\contentsline {section}{\numberline {1.1}Zielsetzung}{3}{}%
+\contentsline {section}{\numberline {1.2}Wahrscheinlichkeitsräume}{3}{}%
+\contentsline {chapter}{\numberline {2}Die Gaussche Normalverteilung}{4}{}%
